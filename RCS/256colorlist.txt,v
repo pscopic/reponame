@@ -1,0 +1,47 @@
+head	1.1;
+access;
+symbols;
+locks
+	ydef:1.1; strict;
+comment	@# @;
+
+
+1.1
+date	2008.04.25.11.03.22;	author ydef;	state Exp;
+branches;
+next	;
+
+
+desc
+@initial
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@calmar256-light.vim
+calmar256.vim
+colorful256.vim
+desert256.vim
+gardener.vim
+greenvision.vim
+icansee.vim
+inkpot.vim
+khaki.vim
+leo.vim
+lettuce.vim
+martinkrischik.vim
+oceanblack256.vim
+ps_color.vim
+pscolor.vim
+railscasts.vim
+simple256.vim
+tabula.vim
+vibrantink.vim
+vividchalk.vim
+xoria256.vim
+xterm16.vim
+@

@@ -1,0 +1,352 @@
+let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
+argglobal
+let s:cpo_save=&cpo
+set cpo&vim
+imap <buffer> <S-CR> <br />
+imap <buffer> <C-CR> o
+vnoremap <buffer> <silent> 	 :call HTMLnextInsertPoint('n')
+nnoremap <buffer> <silent> 	 :call HTMLnextInsertPoint('n')
+imap <buffer> � <S-Â>�
+nnoremap <buffer> <silent> ;nw3 :call LaunchBrowser('w',1)
+nnoremap <buffer> <silent> ;w3 :call LaunchBrowser('w',0)
+nnoremap <buffer> <silent> ;nly :call LaunchBrowser('l',1)
+nnoremap <buffer> <silent> ;ly :call LaunchBrowser('l',0)
+nnoremap <buffer> <silent> ;toa :call LaunchBrowser('o',2)
+nnoremap <buffer> <silent> ;noa :call LaunchBrowser('o',1)
+nnoremap <buffer> <silent> ;oa :call LaunchBrowser('o',0)
+nnoremap <buffer> <silent> ;nne :call LaunchBrowser('n',1)
+nnoremap <buffer> <silent> ;ne :call LaunchBrowser('n',0)
+nnoremap <buffer> <silent> ;tmo :call LaunchBrowser('m',2)
+nnoremap <buffer> <silent> ;nmo :call LaunchBrowser('m',1)
+nnoremap <buffer> <silent> ;mo :call LaunchBrowser('m',0)
+nnoremap <buffer> <silent> ;tff :call LaunchBrowser('f',2)
+nnoremap <buffer> <silent> ;nff :call LaunchBrowser('f',1)
+nnoremap <buffer> <silent> ;ff :call LaunchBrowser('f',0)
+nnoremap <buffer> <silent> ;% s=HTMLencodeString(@", '%')
+nnoremap <buffer> <silent> ;& s=HTMLencodeString(@")
+nnoremap <buffer> <silent> ;tA :call HTMLgenerateTable()
+nnoremap <buffer> <silent> ;s4 :call append(0, '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"') | call append(1, ' "http://www.w3.org/TR/html4/strict.dtd">')
+nnoremap <buffer> <silent> ;4 :call append(0, '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"') | call append(1, ' "http://www.w3.org/TR/html4/loose.dtd">')
+nnoremap <buffer> <silent> ;html :if (HTMLtemplate()) | startinsert | endif
+nnoremap <buffer> <silent> ;mi :call MangleImageTag()
+nnoremap <buffer> <silent> ;	 	
+nnoremap <buffer> <silent> ;; ;
+vnoremap <buffer> <silent> ;; ;
+vmap <buffer> <S-Ã>� Â
+imap <buffer> ­ <hr />
+imap <buffer> ° =substitute(g_html_htmlheader,'%VERSION%',(v:version/100).'.'.(v:version%100),'')
+imap <buffer> ¬ <ul></ul>F<O	
+imap <buffer> ® <ol></ol>F<O	
+imap <buffer> ¸ <li></li>F<i
+nmap <buffer> \l "='<a href="#'.@".'"></a>'p
+nmap <buffer> \aL "='<li><a href="'.@*.'" target="_top"></a></li>'p
+nmap <buffer> \al "='<a href="'.@*.'" target="_top"></a>'p
+vmap <buffer> <S-Ã>� Â
+inoremap <buffer> <silent> 	 :call HTMLnextInsertPoint('i')
+inoremap <buffer> <silent> &3. &hellip;
+inoremap <buffer> <silent> &-- &mdash;
+inoremap <buffer> <silent> &3- &mdash;
+inoremap <buffer> <silent> &m- &mdash;
+inoremap <buffer> <silent> &2- &ndash;
+inoremap <buffer> <silent> &n- &ndash;
+inoremap <buffer> <silent> &34 &frac34;
+inoremap <buffer> <silent> &12 &frac12;
+inoremap <buffer> <silent> &14 &frac14;
+inoremap <buffer> <silent> &. &middot;
+inoremap <buffer> <silent> &pa &para;
+inoremap <buffer> <silent> &mu &micro;
+inoremap <buffer> <silent> &de &deg;
+inoremap <buffer> <silent> &? &iquest;
+inoremap <buffer> <silent> &! &iexcl;
+inoremap <buffer> <silent> &o/ &oslash;
+inoremap <buffer> <silent> &/ &divide;
+inoremap <buffer> <silent> &2> &raquo;
+inoremap <buffer> <silent> &2< &laquo;
+inoremap <buffer> <silent> &y" &yuml;
+inoremap <buffer> <silent> &y' &yacute;
+inoremap <buffer> <silent> &u" &uuml;
+inoremap <buffer> <silent> &u^ &ucirc;
+inoremap <buffer> <silent> &u' &uacute;
+inoremap <buffer> <silent> &u` &ugrave;
+inoremap <buffer> <silent> &x &times;
+inoremap <buffer> <silent> &o" &ouml;
+inoremap <buffer> <silent> &o~ &otilde;
+inoremap <buffer> <silent> &o^ &ocirc;
+inoremap <buffer> <silent> &o' &oacute;
+inoremap <buffer> <silent> &o` &ograve;
+inoremap <buffer> <silent> &n~ &ntilde;
+inoremap <buffer> <silent> &i" &iuml;
+inoremap <buffer> <silent> &i^ &icirc;
+inoremap <buffer> <silent> &i' &iacute;
+inoremap <buffer> <silent> &i` &igrave;
+inoremap <buffer> <silent> &e" &euml;
+inoremap <buffer> <silent> &e^ &ecirc;
+inoremap <buffer> <silent> &e' &eacute;
+inoremap <buffer> <silent> &e` &egrave;
+inoremap <buffer> <silent> &c, &ccedil;
+inoremap <buffer> <silent> &ae &aelig;
+inoremap <buffer> <silent> &ao &aring;
+inoremap <buffer> <silent> &a" &auml;
+inoremap <buffer> <silent> &a~ &atilde;
+inoremap <buffer> <silent> &a^ &acirc;
+inoremap <buffer> <silent> &a' &aacute;
+inoremap <buffer> <silent> &a` &agrave;
+inoremap <buffer> <silent> &Y' &Yacute;
+inoremap <buffer> <silent> &U" &Uuml;
+inoremap <buffer> <silent> &U^ &Ucirc;
+inoremap <buffer> <silent> &U' &Uacute;
+inoremap <buffer> <silent> &U` &Ugrave;
+inoremap <buffer> <silent> &O/ &Oslash;
+inoremap <buffer> <silent> &O" &Ouml;
+inoremap <buffer> <silent> &O~ &Otilde;
+inoremap <buffer> <silent> &O^ &Ocirc;
+inoremap <buffer> <silent> &O' &Oacute;
+inoremap <buffer> <silent> &O` &Ograve;
+inoremap <buffer> <silent> &N~ &Ntilde;
+inoremap <buffer> <silent> &I" &Iuml;
+inoremap <buffer> <silent> &I^ &Icirc;
+inoremap <buffer> <silent> &I' &Iacute;
+inoremap <buffer> <silent> &I` &Igrave;
+inoremap <buffer> <silent> &E" &Euml;
+inoremap <buffer> <silent> &E^ &Ecirc;
+inoremap <buffer> <silent> &E' &Eacute;
+inoremap <buffer> <silent> &E` &Egrave;
+inoremap <buffer> <silent> &C, &Ccedil;
+inoremap <buffer> <silent> &AE &AElig;
+inoremap <buffer> <silent> &Ao &Aring;
+inoremap <buffer> <silent> &A" &Auml;
+inoremap <buffer> <silent> &A~ &Atilde;
+inoremap <buffer> <silent> &A^ &Acirc;
+inoremap <buffer> <silent> &A' &Aacute;
+inoremap <buffer> <silent> &A` &Agrave;
+inoremap <buffer> <silent> &c| &cent;
+inoremap <buffer> <silent> &Y= &yen;
+inoremap <buffer> <silent> &# &pound;
+inoremap <buffer> <silent> &tm &trade;
+inoremap <buffer> <silent> &rO &reg;
+inoremap <buffer> <silent> &cO &copy;
+inoremap <buffer> <silent> ;  &nbsp;
+inoremap <buffer> <silent> ;la <LABEL FOR=""></LABEL>F"
+inoremap <buffer> <silent> ;re <INPUT TYPE="RESET" VALUE="Reset">
+inoremap <buffer> <silent> ;su <INPUT TYPE="SUBMIT" VALUE="Submit">
+inoremap <buffer> <silent> ;tx <TEXTAREA NAME="" ROWS="10" COLS="50"></TEXTAREA>k$5F"i
+inoremap <buffer> <silent> ;og <OPTGROUP LABEL=""></OPTGROUP>k$F"i
+inoremap <buffer> <silent> ;op <OPTION></OPTION>F<
+inoremap <buffer> <silent> ;ms <SELECT NAME="" MULTIPLE></SELECT>O
+inoremap <buffer> <silent> ;se <SELECT NAME=""></SELECT>O
+inoremap <buffer> <silent> ;fi <INPUT TYPE="FILE" NAME="" VALUE="" SIZE="20">5F"
+inoremap <buffer> <silent> ;te <INPUT TYPE="TEXT" NAME="" VALUE="" SIZE="20">5F"
+inoremap <buffer> <silent> ;pa <INPUT TYPE="PASSWORD" NAME="" VALUE="" SIZE="20">5F"
+inoremap <buffer> <silent> ;hi <INPUT TYPE="HIDDEN" NAME="" VALUE="">3F"
+inoremap <buffer> <silent> ;ra <INPUT TYPE="RADIO" NAME="" VALUE="">3F"
+inoremap <buffer> <silent> ;ch <INPUT TYPE="CHECKBOX" NAME="" VALUE="">3F"
+inoremap <buffer> <silent> ;bu <INPUT TYPE="BUTTON" NAME="" VALUE="">3F"
+inoremap <buffer> <silent> ;fm <FORM ACTION=""></FORM>k$F"i
+inoremap <buffer> <silent> ;if <IFRAME SRC=""></IFRAME>k$F"i
+inoremap <buffer> <silent> ;nf <NOFRAMES></NOFRAMES>O
+inoremap <buffer> <silent> ;fr <FRAME SRC="">F"
+inoremap <buffer> <silent> ;fs <FRAMESET ROWS="" COLS=""></FRAMESET>k$3F"i
+inoremap <buffer> <silent> ;th <TH></TH>F<
+inoremap <buffer> <silent> ;td <TD></TD>O
+inoremap <buffer> <silent> ;tr <TR></TR>O
+inoremap <buffer> <silent> ;tf <TFOOT></TFOOT>O
+inoremap <buffer> <silent> ;tb <TBODY></TBODY>O
+inoremap <buffer> <silent> ;tH <THEAD></THEAD>O
+inoremap <buffer> <silent> ;ta <TABLE></TABLE>O
+inoremap <buffer> <silent> ;ca <CAPTION></CAPTION>F<
+inoremap <buffer> <silent> ;ob <OBJECT DATA="" WIDTH="" HEIGHT=""></OBJECT>k$5F"i
+inoremap <buffer> <silent> ;ns <NOSCRIPT></NOSCRIPT>O
+inoremap <buffer> <silent> ;eb <EMBED SRC="" WIDTH="" HEIGHT=""><NOEMBED></NOEMBED>k$5F"i
+inoremap <buffer> <silent> ;sj <SCRIPT SRC="" TYPE="text/javascript"></SCRIPT>5F"
+inoremap <buffer> <silent> ;va <VAR></VAR>F<
+inoremap <buffer> <silent> ;ul <UL></UL>O
+inoremap <buffer> <silent> ;tt <TT></TT>F<
+inoremap <buffer> <silent> ;ti <TITLE></TITLE>F<
+inoremap <buffer> <silent> ;sp <SUP></SUP>F<
+inoremap <buffer> <silent> ;sb <SUB></SUB>F<
+inoremap <buffer> <silent> ;ls <LINK REL="stylesheet" TYPE="text/css" HREF="">F"
+inoremap <buffer> <silent> ;cs <STYLE TYPE="text/css"><!----></STYLE>kO
+inoremap <buffer> <silent> ;sm <SMALL></SMALL>F<
+inoremap <buffer> <silent> ;sa <SAMP></SAMP>F<
+inoremap <buffer> <silent> ;sk <STRIKE></STRIKE>F<
+inoremap <buffer> <silent> ;qu <Q></Q>F<
+inoremap <buffer> <silent> ;pr <PRE></PRE>O
+inoremap <buffer> <silent> ;/p </P><P>
+inoremap <buffer> <silent> ;pp <P></P>O
+inoremap <buffer> <silent> ;ol <OL></OL>O
+inoremap <buffer> <silent> ;mE <META NAME="" CONTENT="*">3F"
+inoremap <buffer> <silent> ;me <META NAME="" CONTENT="">3F"
+inoremap <buffer> <silent> ;lk <LINK HREF="">F"
+inoremap <buffer> <silent> ;li <LI></LI>F<
+inoremap <buffer> <silent> ;kb <KBD></KBD>F<
+inoremap <buffer> <silent> ;ii <ISINDEX>
+inoremap <buffer> <silent> ;in <INS></INS>F<
+inoremap <buffer> <silent> ;iM <IMG SRC="*" ALT="">F"
+inoremap <buffer> <silent> ;im <IMG SRC="" ALT="">3F"
+inoremap <buffer> <silent> ;ht <HTML></HTML>O
+inoremap <buffer> <silent> ;Hr <HR WIDTH="75%">
+inoremap <buffer> <silent> ;hr <HR>
+inoremap <buffer> <silent> ;he <HEAD></HEAD>O
+inoremap <buffer> <silent> ;H6 <H6 ALIGN="CENTER"></H6>F<
+inoremap <buffer> <silent> ;H5 <H5 ALIGN="CENTER"></H5>F<
+inoremap <buffer> <silent> ;H4 <H4 ALIGN="CENTER"></H4>F<
+inoremap <buffer> <silent> ;H3 <H3 ALIGN="CENTER"></H3>F<
+inoremap <buffer> <silent> ;H2 <H2 ALIGN="CENTER"></H2>F<
+inoremap <buffer> <silent> ;H1 <H1 ALIGN="CENTER"></H1>F<
+inoremap <buffer> <silent> ;h6 <H6></H6>F<
+inoremap <buffer> <silent> ;h5 <H5></H5>F<
+inoremap <buffer> <silent> ;h4 <H4></H4>F<
+inoremap <buffer> <silent> ;h3 <H3></H3>F<
+inoremap <buffer> <silent> ;h2 <H2></H2>F<
+inoremap <buffer> <silent> ;h1 <H1></H1>F<
+inoremap <buffer> <silent> ;fc <FONT COLOR=""></FONT>F"
+inoremap <buffer> <silent> ;fo <FONT SIZE=""></FONT>F"
+inoremap <buffer> <silent> ;sn <SPAN></SPAN>F<
+inoremap <buffer> <silent> ;dv <DIV></DIV>O
+inoremap <buffer> <silent> ;df <DFN></DFN>F<
+inoremap <buffer> <silent> ;de <DEL></DEL>F<
+inoremap <buffer> <silent> ;dd <DD></DD>F<
+inoremap <buffer> <silent> ;dt <DT></DT>F<
+inoremap <buffer> <silent> ;dl <DL></DL>O
+inoremap <buffer> <silent> ;co <CODE></CODE>F<
+inoremap <buffer> <silent> ;ci <CITE></CITE>F<
+inoremap <buffer> <silent> ;ce <CENTER></CENTER>F<
+inoremap <buffer> <silent> ;br <BR>
+inoremap <buffer> <silent> ;bd <BODY></BODY>O
+inoremap <buffer> <silent> ;bl <BLOCKQUOTE></BLOCKQUOTE>O
+inoremap <buffer> <silent> ;bi <BIG></BIG>F<
+inoremap <buffer> <silent> ;bh <BASE HREF="">F"
+inoremap <buffer> <silent> ;ad <ADDRESS></ADDRESS>F<
+inoremap <buffer> <silent> ;aC <ACRONYM TITLE="*"></ACRONYM>F<
+inoremap <buffer> <silent> ;ac <ACRONYM TITLE=""></ACRONYM>F"
+inoremap <buffer> <silent> ;aB <ABBR TITLE="*"></ABBR>F<
+inoremap <buffer> <silent> ;ab <ABBR TITLE=""></ABBR>F"
+inoremap <buffer> <silent> ;aN <A NAME="*"></A>F<
+inoremap <buffer> <silent> ;an <A NAME=""></A>F"
+inoremap <buffer> <silent> ;aT <A HREF="*" TARGET=""></A>F"
+inoremap <buffer> <silent> ;at <A HREF="" TARGET=""></A>3F"
+inoremap <buffer> <silent> ;aH <A HREF="*"></A>F<
+inoremap <buffer> <silent> ;ah <A HREF=""></A>F"
+imap <buffer> <silent> ;s4 ;s4
+imap <buffer> <silent> ;4 ;4
+inoremap <buffer> <silent> ;mi :call MangleImageTag()
+inoremap <buffer> <silent> ;	 	
+inoremap <buffer> <silent> ;& &
+inoremap <buffer> <silent> ;; ;
+nmap <buffer> ¬ o¬
+nmap <buffer> ® o®
+nmap <buffer> ¸ i¸
+let &cpo=s:cpo_save
+unlet s:cpo_save
+setlocal keymap=
+setlocal noarabic
+setlocal autoindent
+setlocal balloonexpr=
+setlocal nobinary
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal comments=://,b:#,:!,n:>,fb:-,fb:*
+setlocal commentstring=<!--%s-->
+setlocal complete=.,w,b,u,t,i
+setlocal completefunc=tskeleton#Complete
+setlocal nocopyindent
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=line\ %l\ column\ %v\ -\ %m
+setlocal expandtab
+if &filetype != 'html'
+setlocal filetype=html
+endif
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=3
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=syntax
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=XMLFoldLabel()
+setlocal formatexpr=
+setlocal formatoptions=tcq
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal grepprg=
+setlocal iminsert=2
+setlocal imsearch=2
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=HtmlIndentGet(v:lnum)
+setlocal indentkeys=o,O,*<Return>,<>>,{,}
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal linebreak
+setlocal nolisp
+setlocal nolist
+setlocal makeprg=tidy\ -quiet\ -errors\ %
+setlocal matchpairs=(:),{:},[:],<:>
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=alpha,hex
+setlocal nonumber
+setlocal numberwidth=4
+setlocal omnifunc=htmlcomplete#CompleteTags
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal shiftwidth=4
+setlocal noshortname
+setlocal smartindent
+setlocal softtabstop=2
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=
+setlocal suffixesadd=
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'html'
+setlocal syntax=html
+endif
+setlocal tabstop=8
+setlocal tags=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+3
+normal zo
+8
+normal zo
+9
+normal zo
+8
+normal zo
+3
+normal zo
+let s:l = 26 - ((24 * winheight(0) + 32) / 64)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+26
+normal! 080l
+let &so = s:so_save | let &siso = s:siso_save
+doautoall SessionLoadPost
+" vim: set ft=vim :

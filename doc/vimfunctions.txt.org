@@ -1,0 +1,10 @@
+<F2> undo
+<F3> redo
+<F5> TlistToggle
+<F4> RotateColorTheme
+<F6> Close
+<F7> clear SpellErrors
+<F9> Wrap Lines
+<F10> Spell
+<F11> PasteToggle
+<F12> List

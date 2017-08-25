@@ -1,0 +1,78 @@
+
+                                                      sponsor Vim development                                                                       Vim logo                                                                      Vim Book Ad
+
+
+
+    not logged in (login)    des3.vim : Edit DES3 encrypted files and turn Vim into a simple password safe.
+
+                             +-------------------------------------------------+
+    Home                     |  script karma  | Rating 12/8, Downloaded by 195 |
+    Search                   +-------------------------------------------------+
+
+                             created by
+    About Vim                Noah Spurrier
+    Community
+    News                     script type
+    Sponsoring               utility
+    Trivia
+    Documentation            description
+    Download                 This will allow editing of des3 encrypted files. The file must have .des3 extension. The "openssl" command line tool must be in the path. This will turn off the swap file and .viminfo log.
+
+                             You can start by editing an empty unencrypted file with a .des3 extension. When you first write the file you will be asked to give it a password.
+    Scripts
+    Tips                     == Simple password safe ==
+    My Account
+                             If you edit any file named .auth.des3 (full name, not just the extension) then this plugin will add folding features and an automatic quit timeout. You can see an animated GIF screenshot here:
+                                 http://www.noah.org/engineering/des3.gif
+    Site Help
+                             Vim will quit automatically after 5 minutes of no typing activity (unless the file has been changed).
+
+                             This plugin will fold on wiki-style headlines with the following form:
+                                  == This is a headline ==
+                             Any notes under the headline will be inside the fold until the next headline is reached. The SPACE key will toggle a fold open and closed. The q key will quit Vim.
+
+                             Create the following example file named ~/.auth.des3:
+                                  == Colo server ==
+                                  username: maryjane
+                                  password: esydpm
+                                  == Office server ==
+                                  username: peter
+                                  password: 4m4z1ng
+
+                             Then create a bash alias:
+
+                                  alias auth='view ~/.auth.des3'
+
+                             Now you can view your password safe by typing "auth". When Vim starts all the password information will be hidden under the headlines. To view the password information put the cursor on the headline and
+                             press SPACE.
+
+                             Thanks to Tom Purl for the des3 tip.
+
+                             install details
+                             Put this in your plugin directory and Vim will automatically load it:
+
+                                 ~/.vim/plugin/des3.vim
+
+                             You can also source it directly from your .vimrc file:
+
+                                 source des3.vim
+
+
+                             +----------------------------------------------------------------------------+
+                             | rate this script | ( ) Life Changing ( ) Helpful ( ) Unfulfilling  [ rate  |
+                             |                  | ]                                                       |
+                             +----------------------------------------------------------------------------+
+
+                             script versions (upload new version)
+
+                             Click on the package to download.
+
+                              package   script version     date     Vim version      user                                                                      release notes
+                              des3.vim  1.1             2007-03-26  6.0          Noah Spurrier  Corrected the Install documentation.
+                              des3.vim  1               2007-03-20  6.0          Noah Spurrier  Initial upload
+
+
+
+
+                  If you have questions or remarks about this site, visit the vimonline development pages. Please use this site responsibly.                           Sponsored by Web Concept Group Inc. SourceForge.net Logo
+                  Questions about Vim should go to vim@vim.org after searching the archive. Help Bram help Uganda.     free tracking

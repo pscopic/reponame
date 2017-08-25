@@ -1,0 +1,86 @@
+					  [ Jonathan McPhrson's home page ]
+
+								  [ how-to ]
+
+						   .vimrc and customization
+
+ 
+	  vim is extremely customizable. It will read the file .vimrc in your
+	  home directory before it starts. This file can contain settings and
+	 even scripts. The below settings are ones I've found helpful -- give
+								  them a try!
+
+
+								set nocompatible
+
+		This setting prevents vim from emulating the original vi's bugs
+							   and limitations.
+
+								set autoindent
+
+		 The first setting tells vim to use "autoindent" (that is, use
+		the current line's indent level to set the indentr level of new
+	lines). The second makes vim attempt to intelligently guess the indent
+	 level of any new line based on the previous line, assuming the source
+		file is in a C-like language. Combined, they are very useful in
+					 writing wll-formattedii source code.
+
+						set tabstop shiftwidth=4
+
+	   I prefer 4-space tabs to 8-space tabs. The first setting sets up
+		4-space tabs, and the second tells vi to use 4 spaces when text
+		  is indented (auto or with the manual indent adjustmenters.)
+
+								 set showmatch
+
+			This setting will cause the cursor to very briefly jump
+		  to a brace/parenthese/bracket's "match" whenever you type a
+		closing or opening brace/parenthese/bracket. I've had almost no
+	 mismatched-punctuation errors since I started using vim this setting.
+	  * efficient editing set guioptions-=T * multi-file editing * vimrc
+	 and customization I find the toolbar in the GUI version of vim (gvim)
+	  to be somewhat useless visual clutter. This option gets rid of the
+								toolbar. other
+
+	set vb t_vb= * mutt at ucd * par, the paragraph formatter This setting
+	   prevents vi from making its annoying beeps when a command doesn't
+	work. Instead, it briefly flashes * gnu screen the screen -- much less
+								   annoying.
+
+								   set ruler
+
+	   This setting ensures that each window contains a statusline that
+					 displays the current cursor position.
+
+								   set nohls
+
+	   By default, search matches are highlighted. I find this annoying
+	 most of the time. This option turns off search highlighting. You can
+					 always turn it back on with :set hls.
+
+								 set incsearch
+
+		 With this nifty option, vim will search for text as you enter
+	  it. For instance, if you type /bob to search for bob, vi will go to
+	   the first "b" after you type the "b," to the first "bo" after you
+	 type the "o," and so on. It makes searching much faster, since if you
+	  pay attention you never have to enter more than the minimum number
+	 of characters to find your target location. Make sure that you press
+	   Enter to accept the match after vim finds the location you want.
+
+							  set virtualedit=all
+
+		By default, vim doesn't let the cursor stray beyond the defined
+		 text. This setting allows the cursor to freely roam anywhere
+		it likes in command mode. It feels weird at first but is quite
+									useful.
+
+	   Type :help options within vim to get a complete list of options.
+
+	  Many more advanced techniques, options, and mappings are available
+						   on the official vim site.
+
+	   Display this page in a printable format. This page is valid XHTML
+		1.0 Strict. DESIGN AND CONTENT © 2003 J. McPherson UNLESS NOTED
+	  OTHERWISE. LAST DML REBUILD (UPDATE): November 25 2005 03:45 PM SEE
+								 CONTACT INFO.

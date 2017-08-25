@@ -1,0 +1,11 @@
+<F1> help
+<F2> undo
+<F3> redo
+<F4> new
+<F5> open
+<F6> close
+<F7> clear SpellErrors
+<F9> Wrap Lines
+<F10> Spell
+<F11> PasteToggle
+<F12> List
